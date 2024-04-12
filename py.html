@@ -1,0 +1,27 @@
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+
+def python_to_html(code):
+    # Create an instance of PythonLexer
+    lexer = PythonLexer()
+    # Create an instance of HtmlFormatter
+    formatter = HtmlFormatter()
+    # Highlight the code using PythonLexer and HtmlFormatter
+    highlighted_code = highlight(code, lexer, formatter)
+    # Return the highlighted HTML code
+    return highlighted_code
+
+# Example Python code
+python_code = """
+def greet(name):
+    print("Hello, " + name + "!")
+
+greet("World")
+"""
+
+# Convert Python code to HTML
+html_code = python_to_html(python_code)
+
+# Print the HTML code
+print(html_code)
